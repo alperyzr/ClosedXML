@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosedXML.Web", "ClosedXML.Web\ClosedXML.Web.csproj", "{E2FD8152-CC62-49BD-8D65-983BE70BE6AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosedXML.API", "ClosedXML.API\ClosedXML.API.csproj", "{E1A3E618-0B5E-4912-BCE1-AB04980A9725}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2FD8152-CC62-49BD-8D65-983BE70BE6AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FD8152-CC62-49BD-8D65-983BE70BE6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FD8152-CC62-49BD-8D65-983BE70BE6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FD8152-CC62-49BD-8D65-983BE70BE6AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A3E618-0B5E-4912-BCE1-AB04980A9725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A3E618-0B5E-4912-BCE1-AB04980A9725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A3E618-0B5E-4912-BCE1-AB04980A9725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A3E618-0B5E-4912-BCE1-AB04980A9725}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {364FE45A-22C0-4AAF-8152-1378F92FEFBB}
+	EndGlobalSection
+EndGlobal
