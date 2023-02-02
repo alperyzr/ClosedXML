@@ -2,13 +2,13 @@
 
 namespace ClosedXML.Web.Models.ResponseModel
 {
-    public class CovidListResponseModel : _BaseResponse<_BasePagingResponse<List<CovidListDto>>>
+    public class CovidListResponseModel : _BaseResponse<_BasePagingResponse<List<CovidListItem>>>
     {
         public CovidListResponseModel():base("")
         {
 
         }
-        public CovidListResponseModel(_BasePagingResponse<List<CovidListDto>> dto) : base(dto)
+        public CovidListResponseModel(_BasePagingResponse<List<CovidListItem>> dto) : base(dto)
         {
         }
 
@@ -16,15 +16,15 @@ namespace ClosedXML.Web.Models.ResponseModel
         {
         }
 
-        public CovidListResponseModel(_BasePagingResponse<List<CovidListDto>> dto, string message) : base(dto, message)
+        public CovidListResponseModel(_BasePagingResponse<List<CovidListItem>> dto, string message) : base(dto, message)
         {
         }
 
-        public CovidListResponseModel(_BasePagingResponse<List<CovidListDto>> dto, string message, bool IsSucces) : base(dto, message, IsSucces)
+        public CovidListResponseModel(_BasePagingResponse<List<CovidListItem>> dto, string message, bool IsSucces) : base(dto, message, IsSucces)
         {
         }
 
-        public CovidListResponseModel(_BasePagingResponse<List<CovidListDto>> dto, string message, bool IsSucces, string ResultCode) : base(dto, message, IsSucces, ResultCode)
+        public CovidListResponseModel(_BasePagingResponse<List<CovidListItem>> dto, string message, bool IsSucces, string ResultCode) : base(dto, message, IsSucces, ResultCode)
         {
         }
     }

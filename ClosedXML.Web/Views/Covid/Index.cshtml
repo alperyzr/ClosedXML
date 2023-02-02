@@ -1,0 +1,139 @@
+﻿@model CovidListViewModel
+<div class="card grid-card mt-3 mh-100">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-4 h5 text-bold" style="font-size: 21px;">
+                Covid List Sorgu Ve Listeleme Ekranı
+            </div>
+            <div class="col-md-8">
+                <div class="row justify-content-end">                  
+                    <button type="submit" id="btnExcelExport" class="btn btn-purple btn-xs " title="Excel E Aktar"><i class="far fa-file-excel mr-2"></i>Excel E Aktar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pb-3 mt-3" style="border-bottom: 1px solid #7a79b2;">
+        <div class="row">
+            <div class="col-12 col-lg-2 mobile-mt-3">
+                <div class="form-group input-group-sm">
+                    <input type="date" class="form-control" name="CovidDate" id="CovidDate" />
+                </div>
+            </div>
+            <div class="col-12 col-lg-2 mobile-mt-3">
+                <div class="form-group input-group-sm">
+                    <select class="form-control" name="City" id="City">
+                        <option selected="selected" value="0">Şehir Seçiniz</option>
+                        <option value="001">Adana</option>
+                        <option value="002">Adıyaman</option>
+                        <option value="003">Afyonkarahisar</option>
+                        <option value="004">Ağrı</option>
+                        <option value="005">Amasya</option>
+                        <option value="006">Ankara</option>
+                        <option value="007">Antalya</option>
+                        <option value="008">Artvin</option>
+                        <option value="009">Aydın</option>
+                        <option value="010">Balıkesir</option>
+                        <option value="011">Bilecik</option>
+                        <option value="012">Bingöl</option>
+                        <option value="013">Bitlis</option>
+                        <option value="014">Bolu</option>
+                        <option value="015">Burdur</option>
+                        <option value="016">Bursa</option>
+                        <option value="017">Çanakkale</option>
+                        <option value="018">Çankırı</option>
+                        <option value="019">Çorum</option>
+                        <option value="020">Denizli</option>
+                        <option value="021">Diyarbakır</option>
+                        <option value="022">Edirne</option>
+                        <option value="023">Elazığ</option>
+                        <option value="024">Erzincan</option>
+                        <option value="025">Erzurum</option>
+                        <option value="026">Eskişehir</option>
+                        <option value="027">Gaziantep</option>
+                        <option value="028">Giresun</option>
+                        <option value="029">Gümüşhane</option>
+                        <option value="030">Hakkâri</option>
+                        <option value="031">Hatay</option>
+                        <option value="032">Isparta</option>
+                        <option value="033">Mersin</option>
+                        <option value="034">İstanbul</option>
+                        <option value="035">İzmir</option>
+                        <option value="036">Kars</option>
+                        <option value="037">Kastamonu</option>
+                        <option value="038">Kayseri</option>
+                        <option value="039">Kırklareli</option>
+                        <option value="040">Kırşehir</option>
+                        <option value="041">Kocaeli</option>
+                        <option value="042">Konya</option>
+                        <option value="043">Kütahya</option>
+                        <option value="044">Malatya</option>
+                        <option value="045">Manisa</option>
+                        <option value="046">Kahramanmaraş</option>
+                        <option value="047">Mardin</option>
+                        <option value="048">Muğla</option>
+                        <option value="049">Muş</option>
+                        <option value="050">Nevşehir</option>
+                        <option value="051">Niğde</option>
+                        <option value="052">Ordu</option>
+                        <option value="053">Rize</option>
+                        <option value="054">Sakarya</option>
+                        <option value="055">Samsun</option>
+                        <option value="056">Siirt</option>
+                        <option value="057">Sinop</option>
+                        <option value="058">Sivas</option>
+                        <option value="059">Tekirdağ</option>
+                        <option value="060">Tokat</option>
+                        <option value="061">Trabzon</option>
+                        <option value="062">Tunceli</option>
+                        <option value="063">Şanlıurfa</option>
+                        <option value="064">Uşak</option>
+                        <option value="065">Van</option>
+                        <option value="066">Yozgat</option>
+                        <option value="067">Zonguldak</option>
+                        <option value="068">Aksaray</option>
+                        <option value="069">Bayburt</option>
+                        <option value="070">Karaman</option>
+                        <option value="071">Kırıkkale</option>
+                        <option value="072">Batman</option>
+                        <option value="073">Şırnak</option>
+                        <option value="074">Bartın</option>
+                        <option value="075">Ardahan</option>
+                        <option value="076">Iğdır</option>
+                        <option value="077">Yalova</option>
+                        <option value="078">Karabük</option>
+                        <option value="079">Kilis</option>
+                        <option value="080">Osmaniye</option>
+                        <option value="081">Düzce</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-lg-2 mobile-mt-3">
+                <div class="form-group input-group-sm">
+                    <input type="text" class="form-control" name="Count" id="Count" placeholder="Adet" />
+                </div>
+            </div>
+            <div class="col-12 col-lg-2 mobile-mt-3">
+                <div class="form-group">
+                    <button type="submit" id="btnSearch" class="btn btn-purple btn-xs"><i class="fas fa-search mr-2"></i>Ara</button>
+                    <a asp-controller="Covid" asp-action="Index" class="btn btn-danger btn-xs" style="height: 29px; line-height: 25px;"><i class="fas fa-undo mr-2"></i>Temizle</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="viewAll" class="card-body table-responsive pt-0 mt-3">
+        @await Html.PartialAsync("_ViewAll", Model.items)
+    </div>
+
+</div>
+
+@section Scripts
+    {
+    <environment names="Development">
+        <script src="~/js/Covid/Index.js"></script>        
+    </environment>
+    <environment names="Staging,Production">
+        <script asp-append-version="true" src="~/js/Covid/Index.js"></script>       
+    </environment>
+}

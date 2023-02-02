@@ -36,10 +36,10 @@ namespace ClosedXML.Web.Services
         #region Methods
         public async Task<CovidListResponseModel> GetByPage(CovidListRequestModel requestModel)
         {
-            var result = await HttpPostHelper<PagedResultBase<CovidListDto>>.PostDataAsync(_httpContextAccessor, _httpClientFactory, $"{ApiUrl}/covid/getCovidListByFilter", requestModel);
+            var result = await HttpPostHelper<PagedResultBase<CovidListItem>>.PostDataAsync(_httpContextAccessor, _httpClientFactory, $"{ApiUrl}/covid/getCovidListByFilter", requestModel);
             CovidListResponseModel res = new CovidListResponseModel();
 
-            res.payload = new _BasePagingResponse<List<CovidListDto>>();
+            res.payload = new _BasePagingResponse<List<CovidListItem>>();
 
             res.payload.data = result.Payload.Items.ToList();
             res.payload.FilteredRows = result.Payload.RowCount;

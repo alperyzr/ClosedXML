@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace ClosedXML.Web.Models.DTO
 {
-    public class CovidListDto
+    public class CovidListItem
     {
         [ExcelHeader(Name = "Id")]
         [JsonPropertyName("id")]
