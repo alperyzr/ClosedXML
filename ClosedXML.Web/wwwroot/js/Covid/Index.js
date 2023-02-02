@@ -50,7 +50,7 @@ function tblCovidLoad() {
         "columnDefs": [
             { "name": "Id", "data": "id", "targets": 0, "visible": true, "autoWidth": true, "searchable": true },
             { "name": "City", "data": "city", "targets": 1, "visible": true, "autoWidth": true, "searchable": true },
-            { "name": "CovidDate", "data": "covid_date", "targets": 2, "visible": true, "autoWidth": true, "searchable": true },
+            { "name": "CovidDate", "data": "covidDate", "targets": 2, "visible": true, "autoWidth": true, "searchable": true },
             { "name": "Count", "data": "count", "targets": 3, "visible": true, "autoWidth": true, "searchable": true },          
         ],
         "order": [[0, "desc"]]

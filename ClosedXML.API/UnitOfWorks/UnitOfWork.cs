@@ -9,7 +9,7 @@ namespace ClosedXML.API.UnitOfWorks
         private readonly AppDbContext _context;
 
         public ICovidRepository Covids => new CovidRepository(_context);
-        
+
 
         public UnitOfWork(AppDbContext appDbContext)
         {

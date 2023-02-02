@@ -1,4 +1,5 @@
 ﻿function s2ab(s) {
+    debugger;
     var buf = new ArrayBuffer(s.length);
     var view = new Uint8Array(buf);
     for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
@@ -6,6 +7,7 @@
 }
 
 function saveFile(data) {
+    debugger;
     var blob = new Blob([s2ab(atob(data.base64_file))], {
         type: data.content_type
     });

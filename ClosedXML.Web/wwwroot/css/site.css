@@ -433,3 +433,13 @@ table.dataTable {
     table.dataTable.table-striped tr.even {
         background-color: #fff !important;
     }
+.btn.btn-purple.btn-xs, .btn.bg-success.btn-xs {
+    height: 29px;
+    padding-top: 0.2rem;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
