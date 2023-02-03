@@ -20,10 +20,10 @@ namespace ClosedXML.API.Repositories
                 query = query.Where(x => x.City == requestModel.City);
             
             if (requestModel.Count != null)
-                query = query.Where(x => x.Count == requestModel.Count);
+                query = query.Where(x => x.Count >= requestModel.Count);
 
             if (requestModel.CovidDate != null)
-                query = query.Where(x => x.CovidDate == requestModel.CovidDate);
+                query = query.Where(x => x.CovidDate >= requestModel.CovidDate && x.CovidDate <= requestModel.CovidDate.Value.AddHours(23).AddMinutes(59).AddSeconds(59));
           
             var result = query.OrderByDynamic(requestModel.OrderColumn, (requestModel.Orderby == "asc" ? false : true))
                                .GetPaged(requestModel.PageIndex, requestModel.PageSize);

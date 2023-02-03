@@ -1,5 +1,5 @@
 ﻿function s2ab(s) {
-    debugger;
+    
     var buf = new ArrayBuffer(s.length);
     var view = new Uint8Array(buf);
     for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
@@ -7,18 +7,19 @@
 }
 
 function saveFile(data) {
-    debugger;
-    var blob = new Blob([s2ab(atob(data.base64_file))], {
-        type: data.content_type
+    
+    var blob = new Blob([s2ab(atob(data.base64File))], {
+        type: data.contentType
     });
     href = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = data.file_name;
+    a.download = data.fileName;
     a.click();
 }
 
 function saveExcel(tableName, url, postParams) {  
+    
     var table = $('#' + tableName).DataTable();
     var settings = $('#' + tableName).dataTable().fnSettings();
 
@@ -43,8 +44,7 @@ function saveExcel(tableName, url, postParams) {
         url: url,
         type: 'POST',
         data: postParams,
-        success: function (data) {
-            debugger;
+        success: function (data) {           
         },
         error: function (data) {
             //$(".loader-wrapper").css("display", "none");
